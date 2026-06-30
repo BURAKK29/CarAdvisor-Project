@@ -1,0 +1,250 @@
+/* GENEL SAYFA YAPISI */
+.brand-models-wrapper-premium {
+  background-color: #f8f9fa;
+  /* Daha temiz bir arka plan */
+  min-height: 100vh;
+  padding-bottom: 70px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Modern yazı tipi */
+}
+
+.custom-container-premium {
+  max-width: 1400px;
+}
+
+/* BAŞLIK ALANI */
+.brand-header-premium {
+  padding: 50px 20px 40px;
+  background: #fff;
+  border-bottom: 1px solid #eaecef;
+  margin-bottom: 50px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.03);
+}
+
+.brand-page-title-premium {
+  color: #1a202c;
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: -1.8px;
+  margin-bottom: 8px;
+}
+
+.brand-header-subtitle-premium {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #718096;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* YÜKLENİYOR EKRANI (EKSTRA) */
+.loading-container-premium {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  gap: 15px;
+}
+
+.loader-premium {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #0d6efd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin-premium 1s linear infinite;
+}
+
+.loading-text-premium {
+  color: #4a5568;
+  font-size: 1rem;
+  margin: 0;
+}
+
+@keyframes spin-premium {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* MODEL BÖLÜMLERİ */
+.premium-model-section-updated {
+  margin-bottom: 60px;
+}
+
+/* 1. İSTEK: dynamic Underline ********************************/
+.section-header-updated {
+  margin-bottom: 25px;
+  display: inline-block;
+  /* Çizginin başlık uzunluğunda olması için ŞART */
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.premium-model-title-updated {
+  font-size: 2rem;
+  color: #2d3748;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.8px;
+  display: inline-block;
+  /* Çizginin başlık uzunluğunda olması için ŞART */
+}
+
+.title-underline-updated {
+  height: 4px;
+  width: 100%;
+  /* Parent'ı (section-header) ne kadarsa o kadar */
+  background-color: #ffc107;
+  /* NavBar'daki sarı ile uyumlu */
+  border-radius: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/**************************************************************/
+
+/* CAROUSEL (KAYDIRMA) ALANI (EKSTRA GÜZELLEŞTİRME) */
+.premium-carousel-container-updated {
+  overflow-x: auto;
+  padding: 15px 5px 25px;
+  /* Gölgelerin kesilmemesi için padding artırıldı */
+
+  /* Modern, Minimalist Scrollbar Tasarımı */
+  scrollbar-width: thin;
+  scrollbar-color: #e2e8f0 transparent;
+}
+
+.premium-carousel-container-updated::-webkit-scrollbar {
+  height: 5px;
+}
+
+.premium-carousel-container-updated::-webkit-scrollbar-thumb {
+  background-color: #e2e8f0;
+  border-radius: 10px;
+}
+
+.premium-carousel-container-updated::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.premium-carousel-track-updated {
+  display: flex;
+  gap: 30px;
+  /* Kartlar arası boşluk artırıldı */
+}
+
+/* PREMIUM KART TASARIMI */
+.premium-car-card-updated {
+  min-width: 300px;
+  /* Biraz daha genişlettik */
+  max-width: 300px;
+  background: #fff;
+  border-radius: 20px;
+  /* 2. İSTEK: Çok daha yumuşak köşeler ************/
+  border: 1px solid #edf2f7;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  /* Çok hafif, kurumsal bir gölge */
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.premium-car-card-updated:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  border-color: #e2e8f0;
+}
+
+/* RESİM ALANI **************************************************/
+.premium-image-wrapper-updated {
+  position: relative;
+  height: 200px;
+  /* Biraz daha yüksek */
+  background-color: #edf2f7;
+  /* Resim PNG ise şık bir gri kutu */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Taşan kısımları gizler, cover için önemlidir */
+
+  /* 2. İSTEK: Resim wrapper'ının da üst köşelerini yumuşattık */
+  border-radius: 16px 16px 0 0;
+}
+
+.premium-car-image-updated {
+  width: 100%;
+  height: 100%;
+
+  /* 2. İSTEK: CONTAIN YERİNE COVER YAPIYORUZ, Resim kartı tamamen kaplasın */
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.premium-car-card-updated:hover .premium-car-image-updated {
+  transform: scale(1.08);
+  /* Hafif zoom efekti */
+}
+
+/******************************************************************/
+
+.premium-year-badge-updated {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(33, 37, 41, 0.9);
+  /* NavBar rengine yakın, şık */
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  backdrop-filter: blur(5px);
+}
+
+/* KART BİLGİ ALANI */
+.premium-card-info-updated {
+  padding: 22px;
+  /* Daha geniş padding */
+}
+
+.premium-generation-name-updated {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin: 0 0 12px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.5px;
+}
+
+/* ETİKETLERİ VE BİLGİLERİ DAHA CİDDİ HALE GETİRDİK */
+.premium-tags-updated {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.premium-tag-updated {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 15px;
+  border-radius: 25px;
+  /* Hap şeklinde tasarım */
+
+  /* 3. İSTEK (EKSTRA): Daha kurumsal, nötr bir renk şeması ************/
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+/******************************************************************/

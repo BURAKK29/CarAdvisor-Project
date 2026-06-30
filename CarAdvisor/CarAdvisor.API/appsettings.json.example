@@ -1,0 +1,17 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=YOUR_SERVER;Database=CarAdvisor;Integrated Security=True;TrustServerCertificate=True;"
+  },
+  "Gemini": {
+    "ApiKey": "BURAYA API KEYİNİZİ YAZIN",
+    "ModelId": "gemini-flash-latest"
+  }
+}

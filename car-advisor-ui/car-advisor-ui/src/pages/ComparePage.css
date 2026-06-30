@@ -1,0 +1,418 @@
+.compare-page-wrapper {
+    background-color: #f8fafc;
+    min-height: calc(100vh - 75px);
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.compare-header-section {
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.back-btn:hover {
+    background: #edf2f7;
+    color: #1a202c;
+}
+
+.compare-title {
+    color: #1a202c;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.compare-subtitle {
+    color: #718096;
+    font-size: 1.1rem;
+}
+
+/* Tablo Taşıyıcı Alanı (Yana kaydırılabilir) */
+.compare-table-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+    /* Çok araç eklenirse yana kayar */
+    border: 1px solid #e2e8f0;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+    /* Dar ekranlarda bozulmasın diye */
+}
+
+/* Başlık Satırı (Arabalar) */
+.compare-table thead {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    z-index: 10;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.empty-corner {
+    width: 20%;
+    border-right: 1px solid #edf2f7;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.car-card-header {
+    width: 20%;
+    padding: 20px;
+    text-align: center;
+    border-right: 1px solid #edf2f7;
+    border-bottom: 2px solid #e2e8f0;
+    position: relative;
+    vertical-align: top;
+}
+
+.car-card-header:last-child {
+    border-right: none;
+}
+
+.remove-car-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fee2e2;
+    color: #ef4444;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.remove-car-btn:hover {
+    background: #ef4444;
+    color: white;
+}
+
+.car-image-container {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.car-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.car-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 5px 0;
+}
+
+.car-generation {
+    display: block;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 10px;
+}
+
+.car-price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #e53e3e;
+    /* Senin tasarımındaki fiyat kırmızısı */
+}
+
+/* Gövde Satırları (Özellikler) */
+.section-title-row td {
+    background-color: #f8fafc;
+    font-weight: 700;
+    color: #334155;
+    padding: 15px 20px;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 1.1rem;
+}
+
+.feature-label {
+    padding: 16px 20px;
+    font-weight: 600;
+    color: #475569;
+    background-color: #fcfcfc;
+    border-right: 1px solid #edf2f7;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.feature-value {
+    padding: 16px 20px;
+    text-align: center;
+    color: #1e293b;
+    font-weight: 500;
+    border-right: 1px solid #edf2f7;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.feature-value:last-child {
+    border-right: none;
+}
+
+.compare-table tbody tr:hover td.feature-value {
+    background-color: #f0fdf4;
+    /* Üstüne gelince hafif yeşil parlasın */
+    transition: background-color 0.2s;
+}
+
+/* Boş ve Yükleniyor Durumları */
+.compare-empty-state,
+.compare-loading,
+.compare-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    text-align: center;
+}
+
+.btn-back-home {
+    margin-top: 20px;
+    background: #0d6efd;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* AI EXPERT BUTTON */
+.btn-ai-expert {
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #1f1c2c, #928DAB);
+    /* Premium dark gradient */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: glow-pulse 2s infinite alternate;
+}
+
+.btn-ai-expert:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(146, 141, 171, 0.5);
+}
+
+.btn-ai-expert.loading {
+    animation: placeholder-wave 2s linear infinite;
+    background: #555;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+@keyframes glow-pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(146, 141, 171, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 25px rgba(146, 141, 171, 0.8);
+    }
+}
+
+/* AI TABLE SECTION */
+.ai-section-title td {
+    background: linear-gradient(90deg, #f0f4ff, #e6e9ff);
+    color: #4a5568;
+    font-style: italic;
+    font-weight: 700;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.ai-row .feature-value {
+    color: #2b6cb0;
+    font-weight: 600;
+}
+
+/* AI VERDICT CARD */
+.ai-verdict-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 5px solid #928DAB;
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+.ai-verdict-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #1f1c2c, #928DAB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ai-verdict-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.ai-verdict-content strong {
+    color: #1a202c;
+    background-color: rgba(146, 141, 171, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.ai-verdict-content ul {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.ai-verdict-content li {
+    margin-bottom: 8px;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* AI WINNER SHOWCASE */
+.ai-verdict-split {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.ai-verdict-text {
+    flex: 2;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.ai-verdict-text strong {
+    color: #1a202c;
+    background-color: rgba(146, 141, 171, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.ai-winner-showcase {
+    flex: 1;
+    background: linear-gradient(145deg, #ffffff, #f0f4ff);
+    border: 3px solid #ffd700;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+    position: relative;
+    animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.winner-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #FFD700, #FDB931);
+    color: #5a4a00;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.winner-car-img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.ai-winner-showcase:hover .winner-car-img {
+    transform: scale(1.08);
+}
+
+.winner-car-name {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #1a202c;
+    margin: 5px 0;
+}
+
+.winner-car-trim {
+    font-size: 1.1rem;
+    color: #718096;
+    margin: 0;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 900px) {
+    .ai-verdict-split {
+        flex-direction: column-reverse;
+    }
+}

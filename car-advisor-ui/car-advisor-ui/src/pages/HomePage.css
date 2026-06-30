@@ -1,0 +1,245 @@
+/* GENEL SAYFA YAPISI */
+.brand-page-wrapper {
+  background-color: #f4f6f9;
+  /* Daha mat ve kirli bir gri, premium hissiyatı artırır */
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* HERO (KARŞILAMA) ALANI - SİYAH/KARBON KONSEPTİ */
+.hero-section {
+  /* NavBar'ın bg-dark rengiyle (#212529) birebir başlayan ve hafif açılan bir gradient */
+  background: linear-gradient(180deg, #212529 0%, #0a4c8e 100%);
+  padding: 90px 20px 130px;
+  /* Kartların güzelce bindirmesi için alt boşluğu artırdık */
+  margin-bottom: -70px;
+  position: relative;
+}
+
+/* Hafif bir teknolojik ızgara (grid) deseni ekliyoruz */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 25px 25px;
+  pointer-events: none;
+  /* Tıklamaları engellememesi için */
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: -1.5px;
+  position: relative;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #adb5bd;
+  /* Sönük gri */
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* ARAMA ÇUBUĞU */
+.search-box-container {
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+  /* İkonun input içinde durması için şart */
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: #6c757d;
+  z-index: 5;
+}
+
+.premium-search-input {
+  padding: 20px 20px 20px 55px;
+  /* Soldan ikon için boşluk bıraktık */
+  border-radius: 12px;
+  /* Tam yuvarlak (pill) yerine daha ciddi hafif oval köşeler */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.15rem;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.premium-search-input:focus {
+  outline: none;
+  background: #ffffff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  border-color: #ffc107;
+  /* NavBar'daki sarı renge uyumlu odak çizgisi */
+}
+
+/* KARTLARIN BULUNDUĞU CONTAINER */
+.premium-brand-container {
+  position: relative;
+  z-index: 10;
+  /* Hero alanının desenlerinin üstüne çıkması için */
+}
+
+/* PREMIUM KART TASARIMI */
+.premium-brand-card {
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.premium-brand-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: #dee2e6;
+}
+
+/* LOGO KISMINI TERBİYE EDİYORUZ */
+.logo-wrapper {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.brand-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.05));
+  /* Logolara çok hafif bir kalite gölgesi */
+}
+
+.premium-brand-card:hover .brand-logo-img {
+  transform: scale(1.1);
+}
+
+/* KART ALT KISMI (YAZILAR) */
+.brand-card-body {
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.brand-name {
+  color: #212529;
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  letter-spacing: -0.5px;
+}
+
+.explore-btn {
+  font-size: 0.9rem;
+  color: #ffc107;
+  /* Link rengini NavBar'a uydurduk */
+  color: #495057;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: color 0.2s;
+}
+
+.arrow-icon {
+  font-style: normal;
+  transition: transform 0.2s;
+}
+
+.premium-brand-card:hover .explore-btn {
+  color: #ff0000;
+  /* Hover durumunda yazı koyulaşır */
+}
+
+.premium-brand-card:hover .arrow-icon {
+  transform: translateX(6px);
+}
+
+/* MOBİL EKRANLAR İÇİN UFAK AYARLAMALAR */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .logo-wrapper {
+    height: 110px;
+    padding: 20px;
+  }
+
+  .hero-section {
+    padding: 60px 20px 100px;
+  }
+}
+
+/* TAB (SEKME) TASARIMI */
+.premium-tabs-container {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  margin-top: 10px;
+}
+
+.premium-tab-btn {
+  background: transparent;
+  border: none;
+  color: #adb5bd;
+  padding: 12px 25px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.premium-tab-btn.active {
+  background: #ffc107;
+  color: #212529;
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+}
+
+.premium-tab-btn:hover:not(.active) {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* KASA TİPİ KARTLARI ÖZEL AYARLAR */
+.body-type-icon-wrapper {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.body-type-emoji {
+  font-size: 5rem;
+  /* Emojileri devasa ikonlara çevirdik */
+  transition: transform 0.3s;
+}
+
+.body-type-card:hover .body-type-emoji {
+  transform: scale(1.15) translateY(-5px);
+}

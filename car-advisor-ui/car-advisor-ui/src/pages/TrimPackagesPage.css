@@ -1,0 +1,307 @@
+/* GENEL SAYFA YAPISI */
+.premium-details-wrapper {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding-bottom: 70px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-container-premium {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* YÜKLENİYOR VE HATA EKRANI */
+.loading-container-premium,
+.premium-error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  gap: 15px;
+  text-align: center;
+}
+
+.premium-error-container .error-icon {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.premium-error-container .error-title {
+  color: #1a202c;
+  font-weight: 800;
+}
+
+/* BAŞLIK ALANI */
+.premium-details-header {
+  background: #ffffff;
+  padding: 40px 0 30px 0;
+  border-bottom: 1px solid #eaecef;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.premium-back-btn {
+  background: transparent;
+  border: none;
+  color: #718096;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0;
+  margin-bottom: 25px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+
+.premium-back-btn:hover {
+  color: #1a202c;
+}
+
+.back-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.2s;
+}
+
+.premium-back-btn:hover .back-arrow {
+  transform: translateX(-4px);
+}
+
+.header-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.premium-car-title {
+  color: #1a202c;
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.premium-generation-subtitle {
+  color: #a0aec0;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* LİSTE ALANI */
+.premium-listing-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* KART TASARIMI */
+.premium-trim-card {
+  display: flex;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #edf2f7;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 160px;
+  /* Biraz daha yükseklik verdik */
+}
+
+.premium-trim-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border-color: #e2e8f0;
+}
+
+/* KART İÇİ - RESİM KISMI */
+.premium-trim-image-box {
+  width: 240px;
+  flex-shrink: 0;
+  background-color: #f1f5f9;
+  /* Şık gri arkaplan */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #edf2f7;
+}
+
+.premium-trim-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: contain;
+  /* Resmin kesilmeden şık durması için */
+  transition: transform 0.3s ease;
+}
+
+.premium-trim-card:hover .premium-trim-img {
+  transform: scale(1.05);
+}
+
+/* KART İÇİ - BİLGİ KISMI */
+.premium-trim-info-box {
+  flex-grow: 1;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.premium-trim-title {
+  margin: 0 0 15px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.trim-highlight {
+  color: #1a202c;
+  font-weight: 800;
+}
+
+/* ÖZELLİKLER HAP (PILL) TASARIMI */
+.premium-trim-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.spec-pill {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  display: flex;
+  gap: 6px;
+  color: #1a202c;
+}
+
+.spec-label {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.spec-value {
+  font-weight: 700;
+}
+
+/* KART İÇİ - SAĞ AKSİYON KISMI (FİYAT VE BUTONLAR) */
+.premium-trim-action-box {
+  width: 260px;
+  background-color: #ffffff;
+  border-left: 1px dashed #e2e8f0;
+  /* Çizgi yerine modern kesikli ayraç */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.price-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.price-label {
+  font-size: 0.75rem;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.premium-price-tag {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1a202c;
+  /* Kırmızı yerine ciddi siyah */
+}
+
+.premium-price-tag.pending {
+  font-size: 1rem;
+  color: #d97706;
+  /* Şık bir turuncu/sarı */
+}
+
+/* MODERN BUTONLAR */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.premium-btn-primary {
+  flex: 2;
+  background-color: rgba(255, 193, 7, 1);
+  /* Asfalt siyahı */
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.premium-btn-primary:hover {
+  background-color: #2d3748;
+  transform: translateY(-2px);
+}
+
+.premium-btn-secondary {
+  flex: 1;
+  background-color: transparent;
+  color: #4a5568;
+  border: 1px solid #cbd5e1;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.premium-btn-secondary:hover {
+  background-color: #f1f5f9;
+  color: #1a202c;
+  border-color: #94a3b8;
+}
+
+/* MOBİL UYUM */
+@media (max-width: 992px) {
+  .premium-trim-card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .premium-trim-image-box {
+    width: 100%;
+    height: 180px;
+    border-right: none;
+    border-bottom: 1px solid #edf2f7;
+  }
+
+  .premium-trim-action-box {
+    width: 100%;
+    border-left: none;
+    border-top: 1px dashed #e2e8f0;
+    align-items: center;
+  }
+
+  .price-wrapper {
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .action-buttons {
+    width: 100%;
+  }
+}
